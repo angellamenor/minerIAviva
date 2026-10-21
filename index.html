@@ -121,6 +121,11 @@ figcaption b { font-weight: 500; color: var(--soft); }
 .ask-list h3 { font-size: 1.6rem; font-style: italic; }
 .ask-list p { color: var(--soft); }
 .formbox { border: 1px solid var(--ink); padding: clamp(1.4rem, 4vw, 2.2rem); display: grid; gap: 1rem; }
+.btn.big { font-size: 1.3rem; padding: .85rem 1.6rem; }
+.steps { list-style: none; counter-reset: st; margin: .6rem 0 0; padding: 0; border-top: 1px solid var(--ink); }
+.steps li { counter-increment: st; display: grid; grid-template-columns: 2.2rem 1fr; gap: .8rem; padding: 1rem 0; border-bottom: 1px solid var(--rule); color: var(--soft); }
+.steps li::before { content: counter(st); font-size: 1.6rem; line-height: 1.2; color: var(--accent); }
+.steps li b { font-weight: 500; color: var(--ink); }
 .formbox iframe.form { width: 100%; height: 1170px; border: 0; display: block; }
 iframe.pdf { width: 100%; height: 75vh; min-height: 420px; border: 1px solid var(--rule); display: block; background: var(--paper); }
 iframe.yt { width: 100%; aspect-ratio: 16 / 9; max-width: 100%; border: 0; display: block; background: var(--ink); }
@@ -330,12 +335,22 @@ footer.site .logo { font-size: 1.3rem; }
         <p>Cada historia que recogemos es una lámpara más encendida. Escríbenos y te contamos cómo seguir.</p>
       </div>
 
-      <div style="display:grid;gap:2.5rem">
-        <div class="formbox">
+      <div class="split" style="align-items:start;padding-bottom:4.5rem">
+        <div style="display:grid;gap:1.2rem">
+          <h2>Así empieza todo</h2>
+          <p class="big">Con una conversación con tu abuelo, una caja de fotos olvidada o una clase con ganas de aprender.</p>
+          <p class="soft">No hace falta tener nada preparado ni saber de tecnología. Solo ganas de que la memoria de la mina siga viva.</p>
+          <ol class="steps">
+            <li><span><b>Rellenas el formulario.</b> Solo te llevará unos minutos.</span></li>
+            <li><span><b>Te escribimos.</b> Hablamos contigo para ver cómo te gustaría participar.</span></li>
+            <li><span><b>Empezamos juntos.</b> A tu ritmo, y con todo el acompañamiento que necesites.</span></li>
+          </ol>
+        </div>
+        <div class="formbox" style="margin-bottom:3rem">
           <h3>Formulario de contacto</h3>
-          <!-- Formulario de Microsoft Forms incrustado. Se ve al alojar la web en vuestro servidor. -->
-          <iframe class="form" src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=GALCiT482kuDLf9RVyIcO6uMHRtMurpAmSjMfNq9ZN5UNUlKWUtaS05QTTBZRkVXVVJWSTZDNE83UC4u&amp;embed=true" title="Formulario de contacto de MinerIA&nbsp;viva" allowfullscreen></iframe>
-          <p class="small">¿No se carga el formulario? <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=GALCiT482kuDLf9RVyIcO6uMHRtMurpAmSjMfNq9ZN5UNUlKWUtaS05QTTBZRkVXVVJWSTZDNE83UC4u" target="_blank" rel="noopener">Ábrelo aquí</a>.</p>
+          <p class="soft">Al pulsar el botón, el formulario se abrirá en una <b style="font-weight:500">pestaña nueva</b> de tu navegador. Cuando termines, puedes cerrarla: esta página seguirá abierta.</p>
+          <div class="btns"><a class="btn dark big" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=GALCiT482kuDLf9RVyIcO6uMHRtMurpAmSjMfNq9ZN5UNUlKWUtaS05QTTBZRkVXVVJWSTZDNE83UC4u" target="_blank" rel="noopener">Rellenar el formulario ↗</a></div>
+          <p class="small">Formulario de Microsoft Forms.</p>
         </div>
       </div>
     </div>
